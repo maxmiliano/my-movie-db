@@ -14,28 +14,32 @@
 
 1. Clone the Repository:
 
-~~~sh
-git clone https://github.com/your-username/my-movie-db.git
-cd my-movie-db
-~~~
+   ~~~sh
+   git clone https://github.com/your-username/my-movie-db.git
+   cd my-movie-db
+   ~~~
 
 1. Build the Docker Containers:
-~~~sh
-docker-compose build
-~~~
+
+    ~~~sh
+    docker-compose build
+    ~~~
 
 1.  Start the Docker Containers:
-~~~sh
-docker-compose up -d
-~~~
+
+    ~~~sh
+    docker-compose up -d
+    ~~~
 
 1. Create and Migrate the Database:
-~~~sh
-docker-compose run app rails db:create db:migrate
-~~~
+
+    ~~~sh
+    docker-compose run app rails db:create db:migrate
+    ~~~
 
 1. Access the Application:
-The Rails application should now be running at `http://localhost:3000`.
+
+    The Rails application should now be running at `http://localhost:3000`.
 
 ## Testing
 Work in progress.
@@ -43,4 +47,3 @@ Work in progress.
 ## Contributions
 
 Since this is a study project, it's not expected to receive Pull Request. But feel free to fork it and use it as you want for your own study or other needs.
-
