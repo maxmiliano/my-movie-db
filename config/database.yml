@@ -1,0 +1,21 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  host: db
+  username: <%= ENV['POSTGRES_USER'] %>
+  password: <%= ENV['POSTGRES_PASSWORD'] %>
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: my_movie_db_development
+
+test:
+  <<: *default
+  database: my_movie_db_test
+
+production:
+  <<: *default
+  database: my_movie_db_production
+  username: my_movie_db
+  password: <%= ENV["MY_MOVIE_DB_DATABASE_PASSWORD"] %>

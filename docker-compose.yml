@@ -1,0 +1,39 @@
+version: '3.8'
+services:
+  app:
+    build: .
+    command: ./bin/rails server -p 3000 -b '0.0.0.0'
+    volumes:
+      - .:/rails
+      - bundle_data:/usr/local/bundle
+      - node_modules:/rails/node_modules
+      - temp_data:/rails/tmp
+      - packs:/rails/public/packs
+    ports:
+      - "3000:3000"
+    environment:
+      - RAILS_ENV=development
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=sicr3t
+      - POSTGRES_HOST=db
+      - POSTGRES_PORT=5432
+      - POSTGRES_DB=postgres
+    depends_on:
+      - db
+
+  db:
+    image: postgres:13.1-alpine
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: my_movie_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: sicr3t
+
+volumes:
+  db_data:
+  bundle_data:
+  temp_data:
+  node_modules:
+  packs:
+
