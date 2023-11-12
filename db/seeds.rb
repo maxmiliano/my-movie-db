@@ -1,9 +1,22 @@
-# This file should ensure the existence of records required to run the application in every environment (production,
-# development, test). The code here should be idempotent so that it can be executed at any point in every environment.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Example:
-#
-#   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
-#     MovieGenre.find_or_create_by!(name: genre_name)
-#   end
+Movie.destroy_all
+Movie.create([
+  { original_title: 'Inception', release_date: '2010-07-16', storyline: 'A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a CEO.' },
+  { original_title: 'The Shawshank Redemption', release_date: '1994-09-23', storyline: 'Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.' },
+  { original_title: 'The Godfather', release_date: '1972-03-24', storyline: 'The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.' },
+  { original_title: 'The Dark Knight', release_date: '2008-07-18', storyline: 'When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.' },
+  { original_title: 'Pulp Fiction', release_date: '1994-10-14', storyline: 'The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.' },
+  { original_title: 'Forrest Gump', release_date: '1994-07-06', storyline: 'The presidencies of Kennedy and Johnson, the Vietnam War, the Watergate scandal and other historical events unfold from the perspective of an Alabama man with an IQ of 75.' },
+  { original_title: 'The Matrix', release_date: '1999-03-31', storyline: 'When a beautiful stranger leads computer hacker Neo to a forbidding underworld, he discovers the shocking truth--the life he knows is the elaborate deception of an evil cyber-intelligence.' },
+  { original_title: 'Parasite', release_date: '2019-05-30', storyline: 'Greed and class discrimination threaten the newly formed symbiotic relationship between the wealthy Park family and the destitute Kim clan.' },
+  { original_title: 'Interstellar', release_date: '2014-11-07', storyline: 'A team of explorers travel through a wormhole in space in an attempt to ensure humanity\'s survival.' },
+  { original_title: 'Whiplash', release_date: '2014-10-10', storyline: 'A promising young drummer enrolls at a cut-throat music conservatory where his dreams of greatness are mentored by an instructor who will stop at nothing to realize a student\'s potential.' },
+  { original_title: 'Harry Potter and the Sorcerer\'s Stone', release_date: '2001-11-16', storyline: 'An orphaned boy enrolls in a school of wizardry, where he learns the truth about himself, his family and the terrible evil that haunts the magical world.' },
+  { original_title: 'The Lord of the Rings: The Fellowship of the Ring', release_date: '2001-12-19', storyline: 'A meek Hobbit from the Shire and eight companions set out on a journey to destroy the powerful One Ring and save Middle-earth from the Dark Lord Sauron.' },
+  { original_title: 'The Lord of the Rings: The Two Towers', release_date: '2002-12-18', storyline: 'While Frodo and Sam edge closer to Mordor with the help of the shifty Gollum, the divided fellowship makes a stand against Sauron\'s new ally, Saruman, and his hordes of Isengard.' },
+  { original_title: 'The Terminator', release_date: '1984-10-26', storyline: 'A human soldier is sent from 2029 to 1984 to stop an almost indestructible cyborg killing machine, sent from the same year, which has been programmed to execute a young woman whose unborn son is the key to humanity\'s future salvation.' },
+  { original_title: 'Terminator 2: Judgment Day', release_date: '1991-07-03', storyline: 'A cyborg, identical to the one who failed to kill Sarah Connor, must now protect her teenage son, John Connor, from a more advanced and powerful cyborg.' },
+  { original_title: 'Iron Man', release_date: '2008-05-02', storyline: 'After being held captive in an Afghan cave, billionaire engineer Tony Stark creates a unique weaponized suit of armor to fight evil.' },
+  { original_title: 'The Avengers', release_date: '2012-05-04', storyline: 'Earth\'s mightiest heroes must come together and learn to fight as a team if they are going to stop the mischievous Loki and his alien army from enslaving humanity.' },
+  { original_title: 'Man of Steel', release_date: '2013-06-14', storyline: 'An alien child is evacuated from his dying world and sent to Earth to live among humans. His peace is threatened, when other survivors of his home planet invade Earth.' },
+  { original_title: 'Wonder Woman', release_date: '2017-06-02', storyline: 'When a pilot crashes and tells of conflict in the outside world, Diana, an Amazonian warrior in training, leaves home to fight a war, discovering her full powers and true destiny.' }
+  ])
